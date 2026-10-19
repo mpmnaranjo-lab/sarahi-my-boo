@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SARAHI ❤️ — MY BOO</title>
+<meta name="description" content="Un cómic interactivo hecho para Sarahi.">
+<meta name="theme-color" content="#5bb8f0">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🕷️%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- Símbolos gráficos originales (no son imágenes oficiales) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mask" viewBox="0 0 100 110">
+      <path d="M50 4C22 4 8 30 10 60c2 28 20 46 40 46s38-18 40-46C92 30 78 4 50 4Z" fill="#e0202b" stroke="#111" stroke-width="4"/>
+      <g stroke="#111" stroke-width="1.8" fill="none"><path d="M50 4v102M10 60h80M18 30c20 8 44 8 64 0M14 84c24-8 48-8 72 0M30 10c6 30 6 66 0 94M70 10c-6 30-6 66 0 94"/></g>
+      <path d="M16 54c10-12 26-10 32 4-4 12-22 14-32-4ZM84 54c-10-12-26-10-32 4 4 12 22 14 32-4Z" fill="#fff" stroke="#111" stroke-width="4"/>
+    </symbol>
+    <symbol id="car" viewBox="0 0 220 100">
+      <path d="M8 70c0-14 6-22 22-26l30-4c14-16 34-22 60-22 24 0 40 8 52 24l12 4c14 4 22 10 22 22v10H8Z" fill="#e0202b" stroke="#111" stroke-width="4"/>
+      <path d="M70 42c10-10 24-14 44-14 18 0 30 6 38 16Z" fill="#bfe6ff" stroke="#111" stroke-width="4"/>
+      <circle cx="112" cy="64" r="12" fill="#fff" stroke="#111" stroke-width="3"/>
+      <text x="112" y="69" text-anchor="middle" font-family="Bangers,Impact,sans-serif" font-size="15" fill="#111">95</text>
+      <path d="M30 76h40M150 76h40" stroke="#fff" stroke-width="4"/>
+      <g fill="#111"><circle cx="55" cy="82" r="16"/><circle cx="170" cy="82" r="16"/></g>
+      <g fill="#ddd" stroke="#111" stroke-width="2"><circle cx="55" cy="82" r="7"/><circle cx="170" cy="82" r="7"/></g>
+    </symbol>
+    <symbol id="web" viewBox="0 0 100 100">
+      <g stroke="#111" stroke-width="1.5" fill="none"><path d="M0 0L100 100M0 40L60 100M40 0L100 60M0 0h0M0 18c14 0 18 4 18 18M0 36c26 0 34 8 34 34M0 56c36 0 44 12 44 44"/></g>
+    </symbol>
+    <symbol id="flag" viewBox="0 0 80 40"><rect width="80" height="40" fill="#fff" stroke="#111" stroke-width="3"/><g fill="#111"><rect width="10" height="10"/><rect x="20" width="10" height="10"/><rect x="40" width="10" height="10"/><rect x="60" width="10" height="10"/><rect x="10" y="10" width="10" height="10"/><rect x="30" y="10" width="10" height="10"/><rect x="50" y="10" width="10" height="10"/><rect x="70" y="10" width="10" height="10"/><rect y="20" width="10" height="10"/><rect x="20" y="20" width="10" height="10"/><rect x="40" y="20" width="10" height="10"/><rect x="60" y="20" width="10" height="10"/><rect x="10" y="30" width="10" height="10"/><rect x="30" y="30" width="10" height="10"/><rect x="50" y="30" width="10" height="10"/><rect x="70" y="30" width="10" height="10"/></g></symbol>
+  </defs>
+</svg>
+
+<header class="topbar">
+  <button class="btn small ghost" id="btnHome" aria-label="Volver al inicio (capítulo 1)">🏠 Inicio</button>
+  <div class="prog" role="status" aria-live="polite">
+    <span id="progLabel">CAPÍTULO 1 DE 8</span>
+    <div class="bar" aria-hidden="true"><i id="progFill"></i></div>
+  </div>
+  <button class="btn small ghost" id="btnMusic" aria-expanded="false" aria-controls="player">🎵 Música</button>
+</header>
+
+<aside class="player" id="player" hidden aria-label="Reproductor de música">
+  <p class="pl-title">🎵 Nuestra canción</p>
+  <div class="pl-ctrl">
+    <button class="btn small" id="plPlay" aria-label="Reproducir música">▶ Reproducir</button>
+    <label>Volumen <input type="range" id="plVol" min="0" max="100" value="60" aria-label="Volumen"></label>
+  </div>
+  <p id="plState" class="pl-state" role="status">Toca “Reproducir” cuando quieras. No suena sola.</p>
+  <a class="btn small ghost" id="plLink" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=nNUiVCKu_9Y">Abrir en YouTube ↗</a>
+  <div id="ytHolder" class="yt-holder" aria-hidden="true"><div id="yt"></div></div>
+</aside>
+
+<main id="book">
+
+<!-- CAP 1 -->
+<section class="chap c1" id="cap-1" data-title="Portada" aria-labelledby="t1">
+  <div class="city" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <svg class="webcorner" aria-hidden="true"><use href="#web"/></svg>
+  <svg class="hero-spidey bob" aria-hidden="true"><use href="#mask"/></svg>
+  <svg class="hero-car" aria-hidden="true"><use href="#car"/></svg>
+  <div class="speed" aria-hidden="true"></div>
+  <div class="cover-card">
+    <p class="issue">Edición única · Hecha para ti</p>
+    <h1 id="t1" class="logo">SARAHI ❤️</h1>
+    <blockquote class="balloon">Entre millones de personas<br>en este universo,<br>mi casualidad favorita<br>fuiste tú, MY BOO.</blockquote>
+    <button class="btn big" data-go="2">COMENZAR AVENTURA</button>
+    <p class="hint" aria-hidden="true">▼ desliza por los capítulos ▼</p>
+  </div>
+</section>
+
+<!-- CAP 2 -->
+<section class="chap c2" id="cap-2" data-title="La casualidad del bus" hidden aria-labelledby="t2">
+  <h2 id="t2" class="ttl">LA CASUALIDAD DEL BUS</h2>
+  <div class="panels">
+    <figure class="panel p-bus">
+      <svg viewBox="0 0 320 160" role="img" aria-label="Ilustración de un bus de ciudad con ventanas y dos ruedas">
+        <rect width="320" height="160" fill="#bfe6ff"/><g fill="#8fcaf0" stroke="#111" stroke-width="3"><rect x="10" y="30" width="40" height="110"/><rect x="250" y="10" width="50" height="130"/></g>
+        <rect x="40" y="52" width="240" height="68" rx="10" fill="#e0202b" stroke="#111" stroke-width="4"/>
+        <g fill="#fff" stroke="#111" stroke-width="3"><rect x="54" y="62" width="40" height="28"/><rect x="104" y="62" width="40" height="28"/><rect x="154" y="62" width="40" height="28"/><rect x="204" y="62" width="60" height="44"/></g>
+        <g fill="#111"><circle cx="90" cy="122" r="14"/><circle cx="225" cy="122" r="14"/></g><path d="M0 138h320" stroke="#111" stroke-width="4"/>
+      </svg>
+      <figcaption class="cap">Un día cualquiera…</figcaption>
+    </figure>
+    <div class="panel p-text"><p class="balloon">Yo solo iba a dejar unas cosas a mi pana… y terminé conociendo a alguien que me daría ganas de seguir descubriendo su historia.</p></div>
+    <div class="panel p-text2"><p class="balloon">Mi amigo es sobrino de Sarahi, y ella estaba ahí. Quién diría que un viaje en bus iba a tener una casualidad tan bonita. 🚌❤️</p></div>
+  </div>
+</section>
+
+<!-- CAP 3 -->
+<section class="chap c3" id="cap-3" data-title="Crocs" hidden aria-labelledby="t3">
+  <h2 id="t3" class="ttl">LAS FAMOSAS CROCS DE SPIDER-MAN</h2>
+  <div class="panels two">
+    <figure class="panel photo">
+      <button class="zoom" data-zoom="assets/images/crocs-spiderman.jpg" data-alt="Sarahi con sudadera azul y chanclas rojas con ojos de Spider-Man" aria-label="Ampliar foto de las chanclas de Spider-Man">
+        <img class="zoomin" src="assets/images/crocs-spiderman.jpg" alt="Sarahi con sudadera azul y chanclas rojas con ojos de Spider-Man" loading="lazy" width="720" height="1280">
+      </button>
+      <figcaption class="cap">¡ZOOM! 🕷️</figcaption>
+    </figure>
+    <div class="panel">
+      <p class="balloon">Y entonces llegó la segunda vez que nos vimos… con sus Crocs de Spider-Man. 🕷️❤️</p>
+      <p class="balloon alt">No sé si fueron las chanclas, sus ojitos o esa forma tan natural de ser, pero ese día me pareció todavía más bonita.</p>
+      <svg class="deco bob" aria-hidden="true"><use href="#mask"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- CAP 4 -->
+<section class="chap c4" id="cap-4" data-title="Detalles" hidden aria-labelledby="t4">
+  <h2 id="t4" class="ttl">ESOS DETALLES QUE ME GUSTAN DE TI</h2>
+  <div class="panels grid4">
+    <figure class="panel photo">
+      <button class="zoom" data-zoom="assets/images/detalle-mirada.jpg" data-alt="Sarahi mirando a la cámara, con sudadera azul" aria-label="Ampliar foto"><img class="zoomin" src="assets/images/detalle-mirada.jpg" alt="Sarahi mirando a la cámara, con sudadera azul" loading="lazy" width="720" height="1280"></button>
+    </figure>
+    <figure class="panel photo">
+      <button class="zoom" data-zoom="assets/images/detalle-ojos-cejas.jpg" data-alt="Sarahi recostada sobre un cojín rosado" aria-label="Ampliar foto"><img class="zoomin" src="assets/images/detalle-ojos-cejas.jpg" alt="Sarahi recostada sobre un cojín rosado" loading="lazy" width="720" height="1280"></button>
+    </figure>
+    <p class="panel tip balloon"><b>Tus ojitos</b> tienen algo que hace que me quede mirándote un poquito más.</p>
+    <p class="panel tip balloon alt"><b>Tus cejas</b> y <b>tu cabello</b>: esos pequeños detalles tuyos que quizá ni notas, pero a mí me encantan.</p>
+    <p class="panel tip balloon"><b>Tus labios</b> y tu sonrisa, que se me quedan en la cabeza.</p>
+    <p class="panel tip balloon alt">Me gusta tu forma de ser, <b>natural y sencilla</b>, sin tener que aparentar nada.</p>
+    <p class="panel tip balloon wide">Y, sobre todo, me gusta <b>cómo me tratas</b>. ❤️</p>
+  </div>
+</section>
+
+<!-- CAP 5 -->
+<section class="chap c5" id="cap-5" data-title="Carrera" hidden aria-labelledby="t5">
+  <h2 id="t5" class="ttl">A TODA VELOCIDAD CONTIGO</h2>
+  <div class="track" id="track">
+    <svg class="flag fl" aria-hidden="true"><use href="#flag"/></svg>
+    <svg class="flag fr" aria-hidden="true"><use href="#flag"/></svg>
+    <div class="lines" aria-hidden="true"></div>
+    <svg class="racecar" id="racecar" aria-label="Carro rojo número 95"><use href="#car"/></svg>
+    <div class="finish" aria-hidden="true"></div>
+  </div>
+  <button class="btn" id="btnRace">🏁 ¡Arrancar!</button>
+  <p id="raceMsg" class="balloon" role="status">No sé qué curvas nos traerá la vida, pero por ahora me encanta compartir esta pequeña aventura contigo. Y si hay carrera, ya sabes quién tiene el número 95.</p>
+</section>
+
+<!-- CAP 6 -->
+<section class="chap c6" id="cap-6" data-title="Invitación" hidden aria-labelledby="t6">
+  <h2 id="t6" class="ttl">NUESTRA PRÓXIMA AVENTURA</h2>
+  <div class="ticket">
+    <div class="tk-main">
+      <svg class="tk-car" aria-hidden="true"><use href="#car"/></svg>
+      <p class="tk-big">CARS</p>
+      <p class="tk-pass">Entrada de cine · Pase de carrera</p>
+      <p class="tk-date">Miércoles 21 de octubre de 2026</p>
+      <p class="tk-note">Hora y lugar: por definir juntos.</p>
+    </div>
+    <div class="tk-stub" aria-hidden="true">ADMIT<br>2<br>🏁</div>
+  </div>
+  <p class="balloon">Se busca copiloto para una misión muy importante: ver Cars conmigo, reírnos un rato y pasar un bonito momento juntos.</p>
+  <button class="btn big" id="btnMission" aria-controls="missionMsg">ACEPTAR MISIÓN</button>
+  <p id="missionMsg" class="reveal" hidden role="status">🏎️ ¡Misión registrada en esta página! Copiloto confirmada… en mi corazón. 💨❤️<br><small>(Solo es un mensaje de la web: nada se envía ni se reserva.)</small></p>
+</section>
+
+<!-- CAP 7 -->
+<section class="chap c7" id="cap-7" data-title="Cupón" hidden aria-labelledby="t7">
+  <h2 id="t7" class="ttl">CANJEA TU REGALO</h2>
+  <div class="coupon">
+    <div class="cp-head">✉️ CUPÓN MISTERIOSO ✉️</div>
+    <div class="cp-body">
+      <p id="clue1" class="cp-text">Tienes un regalo esperándote. Toca el botón para recibir tu primera pista.</p>
+      <p id="clue2" class="cp-text final" hidden role="status"></p>
+    </div>
+    <div class="cp-foot"><svg aria-hidden="true"><use href="#flag"/></svg>
+      <button class="btn big" id="btnClue">DESCUBRIR MI PISTA</button>
+      <svg aria-hidden="true"><use href="#flag"/></svg></div>
+  </div>
+</section>
+
+<!-- CAP 8 -->
+<section class="chap c8" id="cap-8" data-title="Continuará" hidden aria-labelledby="t8">
+  <h2 id="t8" class="ttl">CONTINUARÁ…</h2>
+  <div class="finale">
+    <figure class="panel photo">
+      <button class="zoom" data-zoom="assets/images/selfie-juntos.jpg" data-alt="Sarahi y yo juntos en una selfie, con un gesto divertido" aria-label="Ampliar foto de nosotros"><img class="zoomin" src="assets/images/selfie-juntos.jpg" alt="Sarahi y yo juntos en una selfie, con un gesto divertido" loading="lazy" width="720" height="1280"></button>
+    </figure>
+    <div>
+      <p class="balloon">Sarahi, esta pequeña página es solo una forma de recordarte que me alegra haberte conocido. Gracias por las sonrisas, por los momentos compartidos y por dejarme descubrir poquito a poquito a la persona tan bonita que eres. ❤️</p>
+      <p class="cont">Esta historia puede continuar… 🕷️🏎️</p>
+      <button class="btn" id="btnRestart">VOLVER AL COMIENZO</button>
+    </div>
+  </div>
+  <h3 class="gal-t">Álbum de recuerdos</h3>
+  <ul class="gallery">
+    <li><button class="zoom" data-zoom="assets/images/polaroid-juntos.jpg" data-alt="Nosotros dos en una foto con marco tipo polaroid" aria-label="Ampliar foto"><img src="assets/images/polaroid-juntos.jpg" alt="Nosotros dos en una foto con marco tipo polaroid" loading="lazy"></button></li>
+    <li><button class="zoom" data-zoom="assets/images/carro-juntos.jpg" data-alt="Dentro de un carro, con las manos entrelazadas" aria-label="Ampliar foto"><img src="assets/images/carro-juntos.jpg" alt="Dentro de un carro, con las manos entrelazadas" loading="lazy"></button></li>
+    <li><button class="zoom" data-zoom="assets/images/sofa-pelicula.jpg" data-alt="En un sofá azul con una laptop, tomados de la mano" aria-label="Ampliar foto"><img src="assets/images/sofa-pelicula.jpg" alt="En un sofá azul con una laptop, tomados de la mano" loading="lazy"></button></li>
+    <li><button class="zoom" data-zoom="assets/images/almuerzo-pulgar.jpg" data-alt="Sarahi en una mesa al aire libre con el pulgar arriba" aria-label="Ampliar foto"><img src="assets/images/almuerzo-pulgar.jpg" alt="Sarahi en una mesa al aire libre con el pulgar arriba" loading="lazy"></button></li>
+  </ul>
+</section>
+
+</main>
+
+<nav class="pager" aria-label="Navegación entre capítulos">
+  <button class="btn" id="btnPrev">← Anterior</button>
+  <button class="btn" id="btnNext">Siguiente →</button>
+</nav>
+
+<dialog id="lightbox" aria-label="Foto ampliada">
+  <button class="btn small" id="lbClose" aria-label="Cerrar foto ampliada">✕ Cerrar</button>
+  <img id="lbImg" alt="">
+</dialog>
+
+<script src="js/main.js"></script>
+</body>
+</html>
